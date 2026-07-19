@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Forever Begins With You</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&family=Great+Vibes&family=Alex+Brush&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader">
+  <div class="loader-petals" id="loaderPetals" aria-hidden="true"></div>
+  <div class="loader-inner">
+    <div class="loader-heart">♥</div>
+    <div class="loader-text">Forever Begins With You</div>
+    <p class="loader-quote">Some stories don't begin with words...<br>They begin with a heartbeat.</p>
+    <button class="loader-continue-btn" id="loaderContinueBtn" type="button">
+      Continue <span class="loader-continue-heart">♥</span>
+    </button>
+  </div>
+</div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ CURSOR GLOW ============ -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ============ NAVBAR ============ -->
+<nav id="navbar">
+  <div class="nav-logo">For My Love <span class="heart-icon">♥</span></div>
+  <div class="nav-links">
+    <a href="#hero" class="nav-link active" data-nav-link>Home</a>
+    <a href="#timeline" class="nav-link" data-nav-link>Our Story</a>
+    <a href="#gallery" class="nav-link" data-nav-link>Memories</a>
+    <a href="#reasons" class="nav-link" data-nav-link>Reasons</a>
+    <a href="#sakura" class="nav-link" data-nav-link>Sakura Tree</a>
+    <a href="#cake-section" class="nav-link" data-nav-link>Birthday</a>
+  </div>
+  <div class="nav-right">
+    <button id="audioToggle" aria-label="Toggle sound">
+      <svg viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+    </button>
+    <button class="nav-cta" id="openSurpriseBtn">Open Surprise <span>🎁</span></button>
+  </div>
+</nav>
+
+<!-- ============ HERO SECTION ============ -->
+<section class="hero" id="hero">
+
+  <!-- Background image -->
+  <div class="hero-bg" id="heroBg"></div>
+
+  <!-- Starfield (JS-generated, twinkling) -->
+  <div class="stars-layer" id="starsLayer" aria-hidden="true"></div>
+
+  <!-- Moon disc + luxury glow halo (parallax target) -->
+  <div class="moon-wrap" id="moonWrap" aria-hidden="true">
+    <div class="moon-glow"></div>
+    <div class="moon-disc"></div>
+  </div>
+
+  <!-- CSS cloud layers (parallax targets) -->
+  <div class="clouds-layer" id="cloudsLayer" aria-hidden="true">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <!-- Moving fog layers -->
+  <div class="fog-layer fog-1"></div>
+  <div class="fog-layer fog-2"></div>
+  <div class="fog-layer fog-3"></div>
+
+  <!-- Fireflies (JS-generated) -->
+  <div class="fireflies-layer" id="firefliesLayer" aria-hidden="true"></div>
+
+
+
+  <!-- Falling sakura petals (populated by JS) -->
+  <div class="sakura-petals-layer" id="sakuraPetalsLayer"></div>
+
+  <!-- Floating hearts -->
+  <div class="hearts-container" id="heartsContainer"></div>
+
+  <!-- Hero text content -->
+  <div class="hero-content">
+    <span class="eyebrow" data-reveal="fade" data-reveal-delay="0">The Day</span>
+    <h1 class="hero-title" data-reveal="slide-up" data-reveal-delay="100">My World<br>Was Born <span class="heart-icon">♥</span></h1>
+    <p class="hero-sub" data-reveal="slide-up" data-reveal-delay="220">A beautiful soul came into this world<br>and made everything better.</p>
+    <button class="cta-btn" id="beginJourneyBtn" data-reveal="slide-up" data-reveal-delay="340">Begin The Journey
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+</section>
+
+<!-- ============ SCENE 2: QUOTE / DOME ============ -->
+<section class="scene2" id="scene2" data-reveal-section>
+
+  <!-- Decorative corner blossom glow (pure CSS, no image dependency) -->
+  <div class="branch-corner branch-tl" aria-hidden="true"></div>
+  <div class="branch-corner branch-br" aria-hidden="true"></div>
+
+  <!-- Cinematic ambient layers: volumetric light rays + soft lens flare, kept behind all content -->
+  <div class="scene2-rays" aria-hidden="true"></div>
+  <div class="scene2-lensflare" aria-hidden="true"></div>
+  <div class="scene2-bokeh" aria-hidden="true"></div>
+
+  <!-- Real CSS-generated sakura petals (drifting naturally, elegant not excessive) -->
+  <div class="scene2-petals" id="scene2Petals" aria-hidden="true"></div>
+
+  <div class="scene2-inner">
+
+    <div class="dome-wrap" data-reveal="scale" data-tilt>
+      <div class="dome-base-glow" aria-hidden="true"></div>
+      <img src="assets/images/rose-dome.png" alt="Rose in a glass dome" class="dome-img">
+      <img src="assets/images/rose-dome.png" alt="" class="dome-img-reflection" aria-hidden="true">
+      <div class="dome-glow"></div>
+      <div class="dome-glow dome-glow-warm" aria-hidden="true"></div>
+      <div class="dome-glass-sheen" aria-hidden="true"></div>
+      <div class="dome-rim-light" aria-hidden="true"></div>
+      <div class="dome-sparkles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="dome-particles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="scene2-divider" aria-hidden="true">
+      <span class="divider-sparkle divider-sparkle-1"></span>
+      <span class="divider-sparkle divider-sparkle-2"></span>
+      <span class="divider-sparkle divider-sparkle-3"></span>
+    </div>
+
+    <div class="quote-content">
+      <span class="eyebrow" data-reveal="fade">A Little Quote</span>
+      <h2 class="quote-title" data-reveal="slide-up" data-reveal-delay="100">Some people<br>search for happiness.</h2>
+      <p class="quote-line" data-reveal="slide-up" data-reveal-delay="200">I was lucky enough</p>
+      <p class="quote-line" data-reveal="slide-up" data-reveal-delay="280">to meet <em class="mine-word">mine.</em> <span class="heart-icon">♥</span></p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ SCENE 3: OUvsR JOURNEY TIMELINE ============ -->
+<section class="timeline-section" id="timeline" data-reveal-section>
+  <div class="timeline-bg" aria-hidden="true">
+    <div class="timeline-fog" aria-hidden="true"></div>
+    <div class="timeline-moonlight" aria-hidden="true"></div>
+    <div class="section-petals" id="timelinePetals" aria-hidden="true"></div>
+    <div class="timeline-fireflies" id="timelineFireflies" aria-hidden="true"></div>
+    <div class="timeline-motes" id="timelineMotes" aria-hidden="true"></div>
+    <div class="timeline-reflection" aria-hidden="true"></div>
+  </div>
+
+  <div class="timeline-header" data-reveal="fade">
+    <span class="eyebrow">Our Journey</span>
+    <h2 class="timeline-heading">The Moments That<br>Made <span class="script-accent">Us</span> <span class="heart-icon">♥</span></h2>
+    <p class="timeline-subtitle">Every little moment with you became my favorite memory.</p>
+  </div>
+
+  <div class="timeline-wrap" id="timelineWrap">
+    <div class="timeline-scroller" id="timelineScroller">
+      <div class="timeline-line" id="timelineLine">
+        <span class="timeline-spark" id="timelineSpark" aria-hidden="true"></span>
+      </div>
+
+      <div class="timeline-item" data-reveal="slide-up" data-reveal-delay="0">
+        <div class="timeline-node">
+          <div class="timeline-particles" aria-hidden="true"></div>
+          <div class="timeline-ring" aria-hidden="true"></div>
+          <div class="timeline-orb timeline-orb-heart">♥</div>
+        </div>
+        <div class="timeline-divider" aria-hidden="true"></div>
+        <div class="timeline-label">First Meet</div>
+        <div class="timeline-date"><span class="date-heart">♥</span>12 May 2021</div>
+        <div class="timeline-popup" role="tooltip">
+          <div class="timeline-popup-thumb" style="background-image:url('assets/images/journey-first-meet.png')"></div>
+          <p class="timeline-popup-text">The moment our story quietly began.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal="slide-up" data-reveal-delay="150">
+        <div class="timeline-node">
+          <div class="timeline-particles" aria-hidden="true"></div>
+          <div class="timeline-ring" aria-hidden="true"></div>
+          <div class="timeline-orb">💬</div>
+        </div>
+        <div class="timeline-divider" aria-hidden="true"></div>
+        <div class="timeline-label">First Chat</div>
+        <div class="timeline-date"><span class="date-heart">♥</span>10 June 2026</div>
+        <div class="timeline-popup" role="tooltip">
+          <div class="timeline-popup-thumb" style="background-image:url('assets/images/journey-first-chat.png')"></div>
+          <p class="timeline-popup-text">Late-night words that felt like home.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal="slide-up" data-reveal-delay="300">
+        <div class="timeline-node">
+          <div class="timeline-particles" aria-hidden="true"></div>
+          <div class="timeline-ring" aria-hidden="true"></div>
+          <div class="timeline-orb">📞</div>
+        </div>
+        <div class="timeline-divider" aria-hidden="true"></div>
+        <div class="timeline-label">First Call</div>
+        <div class="timeline-date"><span class="date-heart">♥</span>12 June 2026</div>
+        <div class="timeline-popup" role="tooltip">
+          <div class="timeline-popup-thumb" style="background-image:url('assets/images/journey-first-call.png')"></div>
+          <p class="timeline-popup-text">Your voice, and I forgot how to breathe.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal="slide-up" data-reveal-delay="450">
+        <div class="timeline-node">
+          <div class="timeline-particles" aria-hidden="true"></div>
+          <div class="timeline-ring" aria-hidden="true"></div>
+          <div class="timeline-orb">🎁</div>
+        </div>
+        <div class="timeline-divider" aria-hidden="true"></div>
+        <div class="timeline-label">First Date</div>
+        <div class="timeline-date"><span class="date-heart">♥</span>11 June 2026</div>
+        <div class="timeline-popup" role="tooltip">
+          <div class="timeline-popup-thumb" style="background-image:url('assets/images/journey-first-date.png')"></div>
+          <p class="timeline-popup-text">Nervous hands and a night we still talk about.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal="slide-up" data-reveal-delay="600">
+        <div class="timeline-node">
+          <div class="timeline-particles" aria-hidden="true"></div>
+          <div class="timeline-ring" aria-hidden="true"></div>
+          <div class="timeline-orb">💔</div>
+        </div>
+        <div class="timeline-divider" aria-hidden="true"></div>
+        <div class="timeline-label">First Fight</div>
+        <div class="timeline-date"><span class="date-heart">♥</span>17 June 2026</div>
+        <div class="timeline-popup" role="tooltip">
+          <div class="timeline-popup-thumb" style="background-image:url('assets/images/journey-first-fight.png')"></div>
+          <p class="timeline-popup-text">We learned that love means staying anyway.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal="slide-up" data-reveal-delay="750">
+        <div class="timeline-node">
+          <div class="timeline-particles" aria-hidden="true"></div>
+          <div class="timeline-ring" aria-hidden="true"></div>
+          <div class="timeline-orb timeline-orb-heart">♥</div>
+        </div>
+        <div class="timeline-divider" aria-hidden="true"></div>
+        <div class="timeline-label">I Love You</div>
+        <div class="timeline-date"><span class="date-heart">♥</span>16 June 2026</div>
+        <div class="timeline-popup" role="tooltip">
+          <div class="timeline-popup-thumb" style="background-image:url('assets/images/journey-i-love-you.png')"></div>
+          <p class="timeline-popup-text">Three words that changed everything.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal="slide-up" data-reveal-delay="900">
+        <div class="timeline-node">
+          <div class="timeline-particles" aria-hidden="true"></div>
+          <div class="timeline-ring" aria-hidden="true"></div>
+          <div class="timeline-orb">∞</div>
+        </div>
+        <div class="timeline-divider" aria-hidden="true"></div>
+        <div class="timeline-label">Forever</div>
+        <div class="timeline-date"><span class="date-heart">♥</span>And Always</div>
+        <div class="timeline-popup" role="tooltip">
+          <div class="timeline-popup-thumb" style="background-image:url('assets/images/journey-forever.png')"></div>
+          <p class="timeline-popup-text">Every chapter after this one, together.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="timeline-quote" data-reveal="fade">
+    From the first moment...<br>
+    <span class="script-accent timeline-quote-script">I knew my forever had your name.</span>
+  </p>
+</section>
+
+
+<!-- ============ SCENE 4: BEAUTIFUL MEMORIES GALLERY ============ -->
+<section class="gallery-section" id="gallery" data-reveal-section>
+  <div class="section-ambient-glow" aria-hidden="true"></div>
+  <div class="section-petals" id="galleryPetals" aria-hidden="true"></div>
+  <div class="gallery-header" data-reveal="fade">
+    <span class="eyebrow">Our Memories</span>
+    <h2 class="gallery-title">Moments We'll Always Keep</h2>
+  </div>
+
+  <div class="gallery-carousel">
+    <button class="gallery-arrow gallery-arrow-left" id="galleryPrev" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+
+    <div class="gallery-track" id="galleryTrack">
+      <div class="gallery-glow" aria-hidden="true"></div>
+      <div class="gallery-burst" id="galleryBurst" aria-hidden="true"></div>
+
+      <div class="polaroid" data-memory-index="0">
+        <div class="polaroid-inner">
+          <div class="polaroid-photo ph-1"><img class="polaroid-img"  src="assets/images/image 3.jpeg" alt="" loading="lazy"></div>
+          <p class="polaroid-caption">A quiet afternoon, just the two of us.</p>
+        </div>
+      </div>
+      <div class="polaroid" data-memory-index="1">
+        <div class="polaroid-inner">
+          <div class="polaroid-photo ph-2"><img class="polaroid-img" src="assets/images/image 5.jpeg" alt="" loading="lazy"></div>
+          <p class="polaroid-caption">The first photo that made me smile like this.</p>
+        </div>
+      </div>
+      <div class="polaroid" data-memory-index="2">
+        <div class="polaroid-inner">
+          <div class="polaroid-photo ph-3"><img class="polaroid-img" src="assets/images/image 1.jpeg" alt="" loading="lazy"></div>
+          <p class="polaroid-caption">Every moment with you<br>is my favorite story.</p>
+        </div>
+      </div>
+      <div class="polaroid" data-memory-index="3">
+        <div class="polaroid-inner">
+          <div class="polaroid-photo ph-4"><img class="polaroid-img" src="assets/images/image 2.jpeg" alt="" loading="lazy"></div>
+          <p class="polaroid-caption">Somewhere in between laughter and forever.</p>
+        </div>
+      </div>
+      <div class="polaroid" data-memory-index="4">
+        <div class="polaroid-inner">
+          <div class="polaroid-photo ph-5"><img class="polaroid-img" src="assets/images/image 4.jpeg" alt="" loading="lazy"></div>
+          <p class="polaroid-caption">Still my favorite view — you, smiling.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="gallery-arrow gallery-arrow-right" id="galleryNext" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- ============ MEMORY MODAL (opened from gallery) ============ -->
+<div class="memory-modal" id="memoryModal">
+  <button class="memory-modal-nav-btn memory-modal-prev" id="memoryModalPrev" aria-label="Previous memory">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+
+  <div class="memory-modal-inner">
+    <button class="memory-modal-close" id="memoryModalClose" aria-label="Close">&times;</button>
+    <span class="memory-modal-count" id="memoryModalCount">1 / 5</span>
+    <div class="memory-modal-photo" id="memoryModalPhoto"></div>
+    <p class="memory-modal-caption" id="memoryModalCaption"></p>
+  </div>
+
+  <button class="memory-modal-nav-btn memory-modal-next" id="memoryModalNext" aria-label="Next memory">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+</div>
+
+<!-- ============ SCENE 5: LETTER + REASONS ============ -->
+<section class="reasons-section" id="reasons" data-reveal-section>
+  <div class="section-ambient-glow" aria-hidden="true"></div>
+  <div class="section-petals" id="reasonsPetals" aria-hidden="true"></div>
+
+  <div class="reasons-grid">
+
+    <!-- Letter side -->
+    <div class="letter-col" data-reveal="slide-right">
+      <span class="eyebrow">Beautiful Memories</span>
+      <h3 class="col-title">Straight from my heart</h3>
+
+      <div class="envelope-wrap" id="envelopeWrap">
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+          <div class="letter-paper">
+            <p>My Love,</p>
+            <p>Every word here is<br>written just for you.<br>Open it when you<br>feel my love.</p>
+          </div>
+          <div class="envelope-flap"></div>
+        </div>
+      </div>
+
+      <button class="letter-btn" id="openLetterBtn">Open My Letter <span>💌</span></button>
+    </div>
+
+    <!-- Reasons side -->
+    <div class="reasons-col" data-reveal="slide-left">
+      <span class="eyebrow">Why I Love You</span>
+      <h3 class="col-title">Just a few of the many reasons...</h3>
+
+      <div class="reasons-cards">
+        <div class="reason-card" data-reveal="slide-up" data-reveal-delay="0">
+          <div class="reason-icon">♥</div>
+          <p class="reason-title">Your Smile</p>
+          <p class="reason-text">It's my favorite place to be.</p>
+        </div>
+        <div class="reason-card" data-reveal="slide-up" data-reveal-delay="80">
+          <div class="reason-icon">✿</div>
+          <p class="reason-title">Your Kindness</p>
+          <p class="reason-text">You have the purest heart.</p>
+        </div>
+        <div class="reason-card" data-reveal="slide-up" data-reveal-delay="160">
+          <div class="reason-icon">★</div>
+          <p class="reason-title">Your Care</p>
+          <p class="reason-text">You always know how to care.</p>
+        </div>
+        <div class="reason-card" data-reveal="slide-up" data-reveal-delay="240">
+          <div class="reason-icon">♥</div>
+          <p class="reason-title">You</p>
+          <p class="reason-text">Because you are YOU.</p>
+        </div>
+      </div>
+
+      <button class="reasons-btn" id="openReasonsBtn">See 10 Reasons <span>♥</span></button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Letter modal (opens on click) -->
+<div class="letter-modal" id="letterModal">
+  <div class="letter-modal-inner">
+    <button class="letter-modal-close" id="letterModalClose">&times;</button>
+    <div class="letter-modal-paper">
+      <p class="letter-modal-greeting">My Love,</p>
+      <p class="letter-modal-body">
+        Every word here is written just for you.<br>
+        From the very first moment, you became my favorite story.<br><br>
+        Thank you for being you — my peace, my joy, my forever.<br>
+        Happy Birthday, my love. ♥
+      </p>
+      <p class="letter-modal-sign">— Always Yours</p>
+    </div>
+  </div>
+</div>
+
+<!-- 10 Reasons — fullscreen cinematic modal -->
+<div class="reasons-modal" id="reasonsModal">
+  <button class="reasons-modal-close" id="reasonsModalClose" aria-label="Close">&times;</button>
+
+  <div class="reasons-modal-inner">
+    <span class="reasons-modal-count" id="reasonsModalCount">1 / 10</span>
+    <div class="reasons-modal-card" id="reasonsModalCard">
+      <div class="reasons-modal-icon" id="reasonsModalIcon">♥</div>
+      <h3 class="reasons-modal-title" id="reasonsModalTitle"></h3>
+      <p class="reasons-modal-text" id="reasonsModalText"></p>
+    </div>
+
+    <div class="reasons-modal-nav">
+      <button class="reasons-modal-nav-btn" id="reasonsModalPrev" aria-label="Previous reason">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="reasons-modal-nav-btn" id="reasonsModalNext" aria-label="Next reason">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SCENE 6: OUR SAKURA TREE ============ -->
+<section class="sakura-section" id="sakura" data-reveal-section>
+  <div class="section-ambient-glow" aria-hidden="true"></div>
+  <div class="section-petals" id="sakuraSectionPetals" aria-hidden="true"></div>
+  <div class="sakura-header" data-reveal="fade">
+    <span class="eyebrow">Our Sakura Tree</span>
+    <p class="sakura-sub">Click on the flowers and see what I meant to<br>want tell you.</p>
+  </div>
+
+  <div class="sakura-tree-wrap" data-reveal="scale">
+    <div class="tree-emotional-glow" aria-hidden="true"></div>
+    <img src="assets/images/sakura-tree.png" alt="Our Sakura Tree" class="sakura-tree-img">
+
+    <button class="sakura-note note-1" data-note="You make ordinary days feel special.">
+      <span class="note-dot"></span>
+    </button>
+    <button class="sakura-note note-2" data-note="With you, every moment is a gift.">
+      <span class="note-dot"></span>
+    </button>
+    <button class="sakura-note note-3" data-note="You are my today and all of my tomorrows.">
+      <span class="note-dot"></span>
+    </button>
+    <button class="sakura-note note-4" data-note="Your laugh is my favorite sound.">
+      <span class="note-dot"></span>
+    </button>
+    <button class="sakura-note note-5" data-note="I fall for you a little more every day.">
+      <span class="note-dot"></span>
+    </button>
+    <button class="sakura-note note-6" data-note="Home is wherever you are.">
+      <span class="note-dot"></span>
+    </button>
+    <button class="sakura-note note-7" data-note="You are the best part of my story.">
+      <span class="note-dot"></span>
+    </button>
+    <button class="sakura-note note-8" data-note="Every season is beautiful with you in it.">
+      <span class="note-dot"></span>
+    </button>
+
+    <div class="sakura-tooltip" id="sakuraTooltip"></div>
+
+    <!-- Floating memory cards around the tree — the tree stays the
+         main focus; these just fill the surrounding empty space -->
+    <div class="memory-chip chip-4" data-reveal="fade" data-reveal-delay="400">
+      Favorite Memory
+    </div>
+    <div class="memory-chip chip-5" data-reveal="fade" data-reveal-delay="500">
+      Best Day Together
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCENE 7: BIRTHDAY SURPRISE (CAKE + CANDLES) ============ -->
+<section class="cake-section" id="cake-section" data-reveal-section>
+  <div class="section-ambient-glow" aria-hidden="true"></div>
+  <div class="section-petals" id="cakePetals" aria-hidden="true"></div>
+
+  <!-- Soft bokeh + fireflies — slow, low-density ambient light -->
+  <div class="cake-ambient-layer" aria-hidden="true">
+    <span class="cake-bokeh bokeh-1"></span>
+    <span class="cake-bokeh bokeh-2"></span>
+    <span class="cake-bokeh bokeh-3"></span>
+    <span class="cake-bokeh bokeh-4"></span>
+    <span class="cake-firefly firefly-a"></span>
+    <span class="cake-firefly firefly-b"></span>
+    <span class="cake-firefly firefly-c"></span>
+    <span class="cake-firefly firefly-d"></span>
+    <span class="cake-firefly firefly-e"></span>
+    <span class="cake-firefly firefly-f"></span>
+    <span class="cake-light-ray ray-1"></span>
+    <span class="cake-light-ray ray-2"></span>
+    <span class="cake-light-ray ray-3"></span>
+    <span class="cake-fog"></span>
+  </div>
+
+  <!-- Single soft radial spotlight — replaces harsh dual-blob glow,
+       guides the eye straight to the cake with feathered edges. -->
+  <div class="cake-spotlight" aria-hidden="true"></div>
+
+  <canvas id="fireworksCanvas"></canvas>
+  <audio id="birthdaySongAudio" src="assets/happy-birthday-song.mp3" preload="auto"></audio>
+  <div class="cake-celebrate-hearts" id="cakeCelebrateHearts" aria-hidden="true"></div>
+
+  <div class="cake-header" data-reveal="fade">
+    <span class="eyebrow">Birthday Surprise</span>
+    <p class="cake-sub">Make a wish and blow the candles!</p>
+  </div>
+
+  <!-- Ambient balloon clusters — one tied bunch per side (pink, gold,
+       glitter), the left side is a mirrored flip of the same image so
+       both sides read as a matching pair. Present from section
+       entrance, float independently, sit close in beside the cake. -->
+  <div class="cake-balloon-cluster cluster-left" id="balloonClusterL" aria-hidden="true">
+    <img src="assets/images/balloon-cluster-flipped.png" alt="" class="cake-balloon-cluster-img">
+  </div>
+  <div class="cake-balloon-cluster cluster-right" id="balloonClusterR" aria-hidden="true">
+    <img src="assets/images/balloon-cluster.png" alt="" class="cake-balloon-cluster-img">
+  </div>
+
+  <!-- Gift boxes — real PNG assets, held back until the wish is made.
+       Settled near the cake's lower area (not extreme corners), each
+       with its own soft ground glow. -->
+  <div class="cake-gift gift-l1" id="giftL1" aria-hidden="true">
+    <span class="cake-gift-glow" aria-hidden="true"></span>
+    <img src="assets/images/gift-gold-pink.png" alt="" class="cake-gift-img">
+  </div>
+  <div class="cake-gift gift-l2" id="giftL2" aria-hidden="true">
+    <span class="cake-gift-glow" aria-hidden="true"></span>
+    <img src="assets/images/gift-pink-gold.png" alt="" class="cake-gift-img">
+  </div>
+  <div class="cake-gift gift-l3" id="giftL3" aria-hidden="true">
+    <span class="cake-gift-glow" aria-hidden="true"></span>
+    <img src="assets/images/gift-gold-pink.png" alt="" class="cake-gift-img">
+  </div>
+  <div class="cake-gift gift-r1" id="giftR1" aria-hidden="true">
+    <span class="cake-gift-glow" aria-hidden="true"></span>
+    <img src="assets/images/gift-pink-gold.png" alt="" class="cake-gift-img">
+  </div>
+  <div class="cake-gift gift-r2" id="giftR2" aria-hidden="true">
+    <span class="cake-gift-glow" aria-hidden="true"></span>
+    <img src="assets/images/gift-gold-pink.png" alt="" class="cake-gift-img">
+  </div>
+  <div class="cake-gift gift-r3" id="giftR3" aria-hidden="true">
+    <span class="cake-gift-glow" aria-hidden="true"></span>
+    <img src="assets/images/gift-pink-gold.png" alt="" class="cake-gift-img">
+  </div>
+
+  <div class="cake-wrap" id="cakeWrap" data-tilt>
+    <div class="cake-glow" aria-hidden="true"></div>
+    <div class="cake-base-light" aria-hidden="true"></div>
+    <img src="assets/images/birthday-cake-plain.png" alt="Birthday Cake" class="cake-img" id="cakeImg">
+
+    <!-- Candle sticks — this cake photo has a plain top, so each candle
+         is a real drawn stick + flame, clustered slightly off-center
+         so it reads naturally against the floral arrangement. -->
+    <div class="candle-stick stick-1"></div>
+    <div class="candle-stick stick-2"></div>
+    <div class="candle-stick stick-3"></div>
+    <div class="candle-stick stick-4"></div>
+    <div class="candle-stick stick-5"></div>
+
+    <div class="candle-flame flame-1" data-candle="1"><span class="ember"></span></div>
+    <div class="candle-flame flame-2" data-candle="2"><span class="ember"></span></div>
+    <div class="candle-flame flame-3" data-candle="3"><span class="ember"></span></div>
+    <div class="candle-flame flame-4" data-candle="4"><span class="ember"></span></div>
+    <div class="candle-flame flame-5" data-candle="5"><span class="ember"></span></div>
+  </div>
+
+  <button class="blow-btn" id="blowCandlesBtn">Blow The Candles <span>🎂</span></button>
+
+</section>
+
+<!-- ============ SCENE 8: FINAL CHAPTER (NEON HEART) ============ -->
+<section class="final-section" id="final-section" data-reveal-section>
+  <div class="section-petals" id="finalPetals" aria-hidden="true"></div>
+
+  <div class="final-side-text final-left" data-reveal="slide-right">
+    <p>No matter how many<br>birthdays come,</p>
+  </div>
+
+  <div class="final-heart-wrap" data-reveal="scale" id="finalHeartWrap">
+    <svg class="neon-heart" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path id="neonHeartPath"
+            d="M100 170
+               C 40 125, 5 90, 5 55
+               C 5 25, 28 5, 55 5
+               C 75 5, 92 15, 100 35
+               C 108 15, 125 5, 145 5
+               C 172 5, 195 25, 195 55
+               C 195 90, 160 125, 100 170 Z"
+            stroke="#ff4f81" stroke-width="3" />
+    </svg>
+
+    <div class="final-heart-content" id="finalHeartContent">
+      <h2 class="final-title">Happy Birthday<br>My Love <span class="heart-icon">♥</span></h2>
+      <p class="final-text">Thank you for being born.<br>You are my greatest gift.</p>
+      <p class="final-script">Forever Begins<br>With You ♡</p>
+      <button class="final-btn" id="alwaysForeverBtn">Always &amp; Forever <span>♥</span></button>
+    </div>
+  </div>
+
+  <div class="final-side-text final-right" data-reveal="slide-left">
+    <p>I just want to celebrate<br>every one of them with you.</p>
+  </div>
+
+</section>
+
+<!-- Always & Forever — fullscreen video modal -->
+<div class="forever-modal" id="foreverModal">
+  <button class="forever-modal-close" id="foreverModalClose" aria-label="Close">&times;</button>
+  <div class="forever-modal-inner" id="foreverModalInner">
+    <video class="forever-modal-video" id="foreverModalVideo" src="assets/video/forever.mp4" controls playsinline></video>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
